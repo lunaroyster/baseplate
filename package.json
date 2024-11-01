@@ -4,8 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint:check": "turbo lint:check",
+    "format:check": "turbo format:check",
+    "type:check": "turbo type:check"
   },
   "keywords": [],
-  "author": "lunaroyster"
+  "author": "lunaroyster",
+  "devDependencies": {
+    "turbo": "^2.2.3"
+  },
+  "packageManager": "pnpm@9.1.3"
 }
