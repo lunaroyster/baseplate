@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 
-import { GeistSans } from "geist/font/sans";
+import { Lora } from "next/font/google";
+
 import { type Metadata } from "next";
 
 import { TRPCReactProvider } from "@/trpc/react";
@@ -11,11 +12,17 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
+const lora = Lora({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+})
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${GeistSans.variable}`}>
+    <html lang="en" className={`${lora.className}`}>
       <body>
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
