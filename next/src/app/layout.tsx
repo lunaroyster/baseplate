@@ -5,6 +5,8 @@ import { Lora } from "next/font/google";
 import { type Metadata } from "next";
 
 import { TRPCReactProvider } from "@/trpc/react";
+import { PostHogProvider } from "./providers";
+import { PostHogPageViewDynamic } from "./PostHogPageView";
 
 export const metadata: Metadata = {
   title: "Baseplate",
@@ -23,9 +25,12 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className={`${lora.className}`}>
-      <body>
-        <TRPCReactProvider>{children}</TRPCReactProvider>
-      </body>
+      <PostHogProvider>
+        <body>
+          <PostHogPageViewDynamic />
+          <TRPCReactProvider>{children}</TRPCReactProvider>
+        </body>
+      </PostHogProvider>
     </html>
   );
 }
