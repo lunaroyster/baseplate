@@ -1,6 +1,6 @@
 {
   "name": "baseplate",
-  "version": "0.0.0-dev.0",
+  "version": "0.0.0-dev.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,6 +8,9 @@
     "lint:check": "turbo lint:check",
     "format:check": "turbo format:check",
     "type:check": "turbo type:check"
+  },
+  "bin": {
+    "baseplate": "./_baseplate/cli.js"
   },
   "keywords": [],
   "author": "lunaroyster",
