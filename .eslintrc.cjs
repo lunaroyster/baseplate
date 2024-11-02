@@ -6,7 +6,12 @@ const config = {
       "./next/tsconfig.json",
       "./pkgs/*/tsconfig.json",
     ],
-    tsconfigRootDir: '.',
+    tsconfigRootDir: './',
+  },
+  settings: {
+    next: {
+      rootDir: "./next",
+    },
   },
   plugins: ["@typescript-eslint"],
   extends: [
