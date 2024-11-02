@@ -2,7 +2,6 @@
     "$schema": "https://turbo.build/schema.json",
     "tasks": {
         "format:check": {},
-        "type:check": {},
-        "lint:check": {}
+        "type:check": {}
     }
 }

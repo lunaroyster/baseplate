@@ -3,7 +3,6 @@ const config = {
   parser: "@typescript-eslint/parser",
   parserOptions: {
     project: [
-      "./tsconfig.json",
       "./next/tsconfig.json",
       "./pkgs/*/tsconfig.json",
     ],
@@ -11,11 +10,11 @@ const config = {
   },
   plugins: ["@typescript-eslint"],
   extends: [
-    "next/core-web-vitals",
+    // "next/core-web-vitals",
     "plugin:@typescript-eslint/recommended-type-checked",
     "plugin:@typescript-eslint/stylistic-type-checked",
   ],
-  ignorePatterns: [".eslintrc.cjs"], // Since no ts file includes this file
+  ignorePatterns: [".eslintrc.cjs", "_baseplate/*"], // Since no ts file includes this file
   rules: {
     "@typescript-eslint/array-type": "off",
     "@typescript-eslint/consistent-type-definitions": "off",

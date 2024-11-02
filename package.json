@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint:check": "turbo lint:check",
+    "lint:check": "eslint .",
     "format:check": "turbo format:check",
     "type:check": "turbo type:check",
     "next:dev": "pnpm --filter next dev"
