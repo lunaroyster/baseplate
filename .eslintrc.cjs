@@ -2,8 +2,12 @@
 const config = {
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    project: ["./tsconfig.json", "./pkgs/*/tsconfig.json"],
-    tsconfigRootDir: "./",
+    project: [
+      "./tsconfig.json",
+      "./next/tsconfig.json",
+      "./pkgs/*/tsconfig.json",
+    ],
+    tsconfigRootDir: '.',
   },
   plugins: ["@typescript-eslint"],
   extends: [
@@ -11,6 +15,7 @@ const config = {
     "plugin:@typescript-eslint/recommended-type-checked",
     "plugin:@typescript-eslint/stylistic-type-checked",
   ],
+  ignorePatterns: [".eslintrc.cjs"], // Since no ts file includes this file
   rules: {
     "@typescript-eslint/array-type": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
