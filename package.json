@@ -1,6 +1,6 @@
 {
   "name": "baseplate",
-  "version": "0.0.0-dev.2",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "type": "module",
