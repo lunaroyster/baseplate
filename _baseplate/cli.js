@@ -2,6 +2,7 @@
 
 const { execSync } = require('child_process');
 const path = require('path');
+const fs = require('fs');
 
 function cloneBaseplate(targetDir) {
   try {
@@ -21,17 +22,31 @@ function removeBaseplateMetaRepo(targetDir) {
   fs.rmSync(metaRepoPath, { recursive: true, force: true });
 }
 
-
-const target = process.argv[2] || '.';
-
-const fs = require('fs');
-
-if (fs.existsSync(target) && fs.readdirSync(target).length > 0) {
-  console.error(`Target directory ${target} is not empty!`);
-  process.exit(1);
+function clearGit(targetDir) {
+  const gitPath = path.join(targetDir, '.git');
+  fs.rmSync(gitPath, { recursive: true, force: true });
 }
 
-const fullpath = path.resolve(target);
+function gitInit(targetDir) {
+  execSync(`git init`, { stdio: 'inherit', cwd: targetDir });
+  execSync(`git add .`, { stdio: 'inherit', cwd: targetDir });
+  execSync(`git commit -m "Initial commit"`, { stdio: 'inherit', cwd: targetDir });
+}
 
-cloneBaseplate(fullpath);
-removeBaseplateMetaRepo(fullpath);
+function main() {
+  const target = process.argv[2] || '.';
+
+  if (fs.existsSync(target) && fs.readdirSync(target).length > 0) {
+    console.error(`Target directory ${target} is not empty!`);
+    process.exit(1);
+  }
+  
+  const fullpath = path.resolve(target);
+  
+  cloneBaseplate(fullpath);
+  removeBaseplateMetaRepo(fullpath);
+  clearGit(fullpath);
+  gitInit(fullpath)
+}
+
+main();
