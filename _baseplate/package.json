@@ -1,0 +1,10 @@
+{
+  "name": "baseplate",
+  "version": "0.0.2",
+  "bin": {
+    "baseplate": "./cli.js"
+  },
+  "author": "lunaroyster",
+  "license": "MIT",
+  "description": ""
+}
