@@ -19,7 +19,7 @@ const config = {
     "plugin:@typescript-eslint/recommended-type-checked",
     "plugin:@typescript-eslint/stylistic-type-checked",
   ],
-  ignorePatterns: [".eslintrc.cjs", "_baseplate/*"], // Since no ts file includes this file
+  ignorePatterns: [".eslintrc.cjs", "_baseplate/*", "next/next.config.js"], // Since no ts file includes this file
   rules: {
     "@typescript-eslint/array-type": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
