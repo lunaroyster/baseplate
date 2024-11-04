@@ -11,6 +11,9 @@ Baseplate is a locked-and-loaded template for building full stack web apps. It m
 - You want to use Jotai for state management
 
 
+I also care deeply about a template being clean and minimalist. This repo currently does not live up to my standard for that: you may stumble upon a bunch of scaffolding or trip over some stray wires. My apologies.
+
+
 ## Initialization
 
 `npx baseplate <project name>`
