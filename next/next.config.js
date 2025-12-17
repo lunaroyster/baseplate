@@ -5,9 +5,6 @@ import { withSentryConfig } from "@sentry/nextjs";
 
 /** @type {import('next').NextConfig} */
 const config = {
-  eslint: {
-    dirs: ["next"],
-  },
   webpack: (config) => {
     config.ignoreWarnings = [
       {
