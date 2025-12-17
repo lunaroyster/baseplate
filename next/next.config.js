@@ -38,7 +38,9 @@ export default process.env.SENTRY_DSN
       tunnelRoute: "/monitoring",
 
       // Hides source maps from generated client bundles
-      hideSourceMaps: true,
+      sourcemaps: {
+        deleteSourcemapsAfterUpload: true,
+      },
 
       // Automatically tree-shake Sentry logger statements to reduce bundle size
       disableLogger: true,
