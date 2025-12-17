@@ -1,9 +1,10 @@
-import { auth } from "@/server/auth";
+import { authClient } from "@/app/auth";
+import { getSessionNoRefresh } from "@/server/auth";
 import { api, HydrateClient } from "@/trpc/server";
 
 export default async function Home() {
   const pingRes = await api.misc.ping();
-  const session = await auth();
+  const session = await getSessionNoRefresh();
 
   if (session?.user) {
     void api.misc.ping.prefetch();
