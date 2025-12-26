@@ -6,7 +6,7 @@ const config = {
       "./next/tsconfig.json",
       "./pkgs/*/tsconfig.json",
     ],
-    tsconfigRootDir: './',
+    tsconfigRootDir: __dirname,
   },
   settings: {
     next: {
