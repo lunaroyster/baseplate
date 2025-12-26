@@ -2,6 +2,7 @@
     "$schema": "https://turbo.build/schema.json",
     "tasks": {
         "format:check": {},
+        "format:write": {},
         "type:check": {}
     }
 }

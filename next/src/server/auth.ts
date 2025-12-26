@@ -1,15 +1,12 @@
 import { betterAuth } from "better-auth";
-import { prismaAdapter } from "better-auth/adapters/prisma";
-// If your Prisma file is located elsewhere, you can change the path
-import { PrismaClient } from "@prisma/client";
+import { drizzleAdapter } from "better-auth/adapters/drizzle";
 import { cache } from "react";
 import { headers } from "next/headers";
-
-const prisma = new PrismaClient();
+import { db } from "./db";
 
 export const auth = betterAuth({
-  database: prismaAdapter(prisma, {
-    provider: "postgresql",
+  database: drizzleAdapter(db, {
+    provider: "pg",
   }),
   emailAndPassword: {
     enabled: true,

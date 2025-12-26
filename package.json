@@ -7,6 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint:check": "eslint .",
     "format:check": "turbo format:check",
+    "format:write": "turbo format:write",
     "type:check": "turbo type:check",
     "next:dev": "pnpm --filter next dev"
   },
